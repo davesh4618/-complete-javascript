@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="heading">hello my name is devesh</h1>
+    <button id="stop">stop</button>
+  </body>
+  <script>
+    // setTimeout() // clearTimeout()
+
+    const namechanger = function () {
+      document.querySelector("h1").innerHTML = "hello my name is abhi";
+    };
+
+    const changename = setTimeout(namechanger, 5000);
+
+    let button = document.querySelector("button");
+    button.addEventListener("click", () => {
+      console.log("button click");
+
+      clearTimeout(changename);
+    });
+  </script>
+</html>

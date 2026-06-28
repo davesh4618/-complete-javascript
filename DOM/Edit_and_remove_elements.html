@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="language">
+      <li>javascript</li>
+    </ul>
+  </body>
+  <script>
+    function languagesetter(langname) {
+      const li = document.createElement("li");
+      li.innerText = `${langname}`;
+      const x = document.querySelector(".language");
+      x.appendChild(li);
+    }
+    languagesetter("java");
+    languagesetter("python");
+    languagesetter("c++");
+
+    const secondlang = document.querySelector("li:nth-child(2)");
+    const newli = document.createElement("li");
+    newli.innerText = "c";
+    secondlang.replaceWith(newli);
+    const first = document.querySelector("li:first-child");
+    first.remove();
+  </script>
+</html>
