@@ -21,10 +21,13 @@
     };
 
     const starrt = start.addEventListener("click", function () {
+      if (intervalid) {
+        clearInterval(intervalid);
+      }
       intervalid = setInterval(printstart, 2000);
     });
 
-    stop.addEventListener("click", function () {
+    const stopp = stop.addEventListener("click", function () {
       clearInterval(intervalid);
     });
   </script>
