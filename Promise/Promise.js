@@ -79,19 +79,19 @@
 //  consumefifth()
  
 
-async function getalluser(){
- try {
-  const response =  await fetch('https://randomuser.me/api/')
-  const data = await response.json()
+// async function getalluser(){
+//  try {
+//   const response =  await fetch('https://randomuser.me/api/')
+//   const data = await response.json()
 
-  console.log(data.results[0].name.title)
- } catch (error) {
-  console.log('E', error);
+//   console.log(data.results[0].name.title)
+//  } catch (error) {
+//   console.log('E', error);
   
- }
+//  }
 
-}
-getalluser()
+// }
+// getalluser()
 
 
 // fetch('https://randomuser.me/api/')
@@ -108,3 +108,48 @@ getalluser()
 //   console.log('E' ,error);
   
 // })
+
+// revision of the promise and then  , catch , finally
+
+// const promiseone = new Promise((resolve,reject)=>{
+//   setTimeout(()=>{
+//     console.log("hello settime out run")
+//     resolve()
+//   },4000)
+// })
+
+// promiseone.then((x)=>{
+//   console.log("promiseone is fullfilled" , x);
+  
+// })
+
+
+
+const promisetwo  = new Promise((resolve , reject)=>{
+  setTimeout(()=>{
+    console.log("hello world")
+    let error = false
+    if (!error){
+      resolve({"username" : "devesh singh rathor" ,"email": "devesh@gmail.com"})
+    }else{
+      reject('error something went wrong')
+    }
+    
+  },3000)
+})
+
+promisetwo
+.then((x)=>{
+console.log(x);
+return x.username
+
+}).then((x1)=>{
+  console.log(x1);
+  
+}).catch((err)=>{
+  console.log(err)
+})
+.finally(()=>{
+  console.log("yo yo yo yo");
+  
+})
