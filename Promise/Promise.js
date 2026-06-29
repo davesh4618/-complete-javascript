@@ -125,31 +125,79 @@
 
 
 
-const promisetwo  = new Promise((resolve , reject)=>{
-  setTimeout(()=>{
-    console.log("hello world")
-    let error = false
-    if (!error){
-      resolve({"username" : "devesh singh rathor" ,"email": "devesh@gmail.com"})
-    }else{
-      reject('error something went wrong')
-    }
+// const promisetwo  = new Promise((resolve , reject)=>{
+//   setTimeout(()=>{
+//     console.log("hello world")
+//     let error = false
+//     if (!error){
+//       resolve({"username" : "devesh singh rathor" ,"email": "devesh@gmail.com"})
+//     }else{
+//       reject('error something went wrong')
+//     }
     
-  },3000)
-})
+//   },3000)
+// })
 
-promisetwo
-.then((x)=>{
-console.log(x);
-return x.username
+// promisetwo
+// .then((x)=>{
+// console.log(x);
+// return x.username
 
-}).then((x1)=>{
-  console.log(x1);
+// }).then((x1)=>{
+//   console.log(x1);
   
-}).catch((err)=>{
-  console.log(err)
+// }).catch((err)=>{
+//   console.log(err)
+// })
+// .finally(()=>{
+//   console.log("yo yo yo yo");
+// })
+
+
+// const promisefive  = new Promise((resolve,reject)=>{
+//  setTimeout(()=>{
+//    let error = true
+//   if (!error){
+//     resolve({"language" : "javascript","password" : 21})
+//   }else{
+//     reject("promise is rejected")
+//   }
+//  },2000)
+// })
+
+// async function promiseconsume() {
+// try{
+//     const response = await promisefive
+//   console.log(response);
+// }catch(err){
+//   console.log(err);
+  
+// }
+  
+// }
+// promiseconsume()
+
+
+
+// async function getalluser(params) {
+//   try {
+//      const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//       let data = await response.json()
+//       console.log(data);
+      
+//   } catch (error) {
+//     console.log(error);
+    
+//   }
+// }
+
+// getalluser()
+
+fetch("https://jsonplaceholder.typicode.com/users")
+.then((response)=>{
+  return response.json()
 })
-.finally(()=>{
-  console.log("yo yo yo yo");
+.then((data)=>{
+  console.log(data);
   
 })
